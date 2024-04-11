@@ -7,6 +7,7 @@ import Profile from "../components/profile/Profile";
 import ChatsContainer from "../components/chats/ChatsContainer";
 import useUserInfo from "../zustand/useUserInfo";
 import useAppState from "../zustand/useAppState";
+import UserInfo from "../components/userInfo/UserInfo
 
 const Home = () => {
   const { appState } = useAppState();
