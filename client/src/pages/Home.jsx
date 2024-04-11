@@ -5,7 +5,6 @@ import Settings from "../components/settings/Settings";
 import Navbar from "../components/Navbar";
 import Profile from "../components/profile/Profile";
 import ChatsContainer from "../components/chats/ChatsContainer";
-import UserInfo from "../components/UserInfo/UserInfo";
 import useUserInfo from "../zustand/useUserInfo";
 import useAppState from "../zustand/useAppState";
 
