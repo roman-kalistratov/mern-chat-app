@@ -1,0 +1,38 @@
+import { Navigate, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/login/Login";
+import SignUp from "./pages/signup/SignUp";
+import { Toaster } from "react-hot-toast";
+import { useAuthContext } from "./context/AuthContext";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
+function App() {
+  const { authUser } = useAuthContext();
+  const queryClient = new QueryClient();
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <div className="h-screen w-screen flex items-center justify-center bg-[#fff] dark:bg-bgMainDark">
+        <Routes>
+          <Route
+            path="/"
+            element={authUser ? <Home /> : <Navigate to={"/login"} />}
+          />
+          <Route
+            path="/login"
+            element={authUser ? <Navigate to="/" /> : <Login />}
+          />
+          <Route
+            path="/signup"
+            element={authUser ? <Navigate to="/" /> : <SignUp />}
+          />
+        </Routes>
+        {/* <ReactQueryDevtools initialIsOpen={false}></ReactQueryDevtools> */}
+        <Toaster />
+      </div>
+    </QueryClientProvider>
+  );
+}
+
+export default App;

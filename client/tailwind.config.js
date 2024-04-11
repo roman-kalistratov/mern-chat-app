@@ -1,0 +1,63 @@
+/** @type {import('tailwindcss').Config} */
+
+export default {
+  content: ["./src/**/*.{html,js,jsx}"],
+  darkMode: "class",
+  daisyui: {
+    themes: ["light"],
+  },
+  theme: {
+    extend: {
+      backgroundColor: {
+        light: "#f2f2f2",
+        light2: "rgb(75, 85, 99, 0.1)",
+        dark: "#111B21",
+        dark2: "#202C33",
+        dark3: "#0C1317",
+        icon: "rgba(78, 172, 109, 0.3)",
+        iconDark: "hsla(0, 10%, 100%, 0.1)",
+        iconHover: "rgba(78, 172, 109, 0.4)",
+        iconHoverDark: "hsla(0, 10%, 100%, 0.2)",
+        inputLight: "#eaeaf1",
+        inputDark: "#101a20",
+        bgHover: "rgba(78, 172, 109, .8)",
+        bgActive: "#4eac6d",
+        bgActiveDark: "#2a3942",
+        green: "rgba(78, 172, 109)",
+        greenLight: "rgba(78, 172, 109, .4)",
+        dividerLight: "#eaeaf1",
+        dividerDark: "#3C4851",
+        bgRed: "#f15c6d",
+        msgFromMe: "rgba(78, 172, 109, .7)",
+        msgFromMeDark: "rgba(78, 172, 109, .23)",
+      },
+      borderColor: {
+        light: "#eaeaf1",
+        green: "rgba(78, 172, 109, .8)",
+        dark: "#3C4851",
+      },
+      textColor: {
+        menu: "#4eac6d",
+        light: "#495057",
+        light2: "#495057bf",
+        dark: "#e9edef",
+        dark2: "#8696a0",
+        iconLight: "#4eac6d",
+        iconDark: "#aebac1",
+        colorRed: "#f15c6d",
+        hoverColorRed: "#be2637",
+        green: "#4eac6d",
+      },
+      backgroundImage: {
+        pattern1: "url('./assets/images/pattern01.png')",
+        pattern2: "url('./assets/images/pattern02.png')",
+        pattern3: "url('./assets/images/pattern03.png')",
+        pattern4: "url('./assets/images/pattern04.png')",
+        pattern5: "url('./assets/images/pattern05.png')",
+        pattern6: "url('./assets/images/pattern06.png')",
+        pattern7: "url('./assets/images/pattern07.png')",
+      },
+    },
+  },
+  plugins: [require("daisyui")],
+};
