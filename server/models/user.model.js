@@ -33,7 +33,11 @@ const userSchema = new mongoose.Schema(
       type: [String],
     },
     blockedUsers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
-    delete: {
+    isDelete: {
+      type: Boolean,
+      default: true,
+    },
+    isUpdate: {
       type: Boolean,
       default: true,
     },

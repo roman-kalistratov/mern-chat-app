@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
-import useSignup from "../../hooks/useSignup";
-import FormContainer from "../../components/forms/FormContainer";
+import useSignup from "../hooks/useSignup";
+import FormContainer from "../components/forms/FormContainer";
 
 const SignUp = () => {
   const { loading, signup } = useSignup();
@@ -26,37 +26,40 @@ const SignUp = () => {
         onSubmit={signupForm.handleSubmit}
         className="p-5 px-5 flex flex-col justify-start gap-2"
       >
-        <label className="label pb-0">
-          <span className="text-base label-text">Nickname</span>
+        <label className=" pb-0 pl-1">
+          <span className="font-semibold text-dark2 label-text">Nickname</span>
         </label>
+
         <input
           type="text"
-          placeholder="johndoe"
-          className="w-full rounded-md p-2 px-3 outline-none border-none"
+          placeholder="Enter nickname"
+          className="p-2 px-3 rounded-sm outline-none text-sm text-dark placeholder:text-dark1 bg-inputDark"
           name="nickname"
           value={signupForm.values.nickname}
           onChange={signupForm.handleChange}
         />
-
-        <label className="label pb-0">
-          <span className="text-base label-text">Password</span>
+        <label className=" pb-0 pl-1">
+          <span className="font-semibold text-dark2 label-text">Password</span>
         </label>
+
         <input
           type="password"
           placeholder="Enter Password"
-          className="w-full rounded-md p-2 px-3 outline-none border-none"
+          className="p-2 px-3 rounded-sm outline-none text-sm text-dark placeholder:text-dark1 bg-inputDark"
           name="password"
           value={signupForm.values.password}
           onChange={signupForm.handleChange}
         />
-
-        <label className="label pb-0">
-          <span className="text-base label-text">Confirm Password</span>
+        <label className=" pb-0 pl-1">
+          <span className="font-semibold text-dark2 label-text">
+            Confirm Password
+          </span>
         </label>
+
         <input
           type="password"
           placeholder="Confirm Password"
-          className="w-full rounded-md p-2 px-3 outline-none border-none"
+          className="p-2 px-3 rounded-sm outline-none text-sm text-dark placeholder:text-dark1 bg-inputDark"
           name="confirmPassword"
           value={signupForm.values.confirmPassword}
           onChange={signupForm.handleChange}
@@ -64,24 +67,22 @@ const SignUp = () => {
 
         <Link
           to="/login"
-          className="text-sm hover:underline hover:text-green mt-2 inline-block"
+          className="text-sm hover:underline text-green mt-2 inline-block"
         >
           Already have an account?
         </Link>
 
-        <div>
-          <button
-            type="submit"
-            className="btn btn-block btn-success hover:text-dark btn-sm mt-2 border border-light bg-white"
-            disabled={loading}
-          >
-            {loading ? (
-              <span className="loading loading-spinner"></span>
-            ) : (
-              "Sign Up"
-            )}
-          </button>
-        </div>
+        <button
+          type="submit"
+          className="bg-icon hover:bg-iconHover text-dark p-2 px-3 text-sm rounded-md outline-none"
+          disabled={loading}
+        >
+          {loading ? (
+            <span className="loading loading-spinner"></span>
+          ) : (
+            "Sign Up"
+          )}
+        </button>
       </form>
     </FormContainer>
   );

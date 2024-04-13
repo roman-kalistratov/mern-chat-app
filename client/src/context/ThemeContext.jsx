@@ -5,12 +5,12 @@ const ThemeContext = createContext();
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     const storedTheme = localStorage.getItem("theme");
-    return storedTheme || "light";
+    return storedTheme || "dark";
   });
 
   const [themeImage, setThemeImage] = useState(() => {
-    const storedImage = localStorage.getItem("theme-image");
-    return storedImage || "pattern1";
+    const storedImage = localStorage.getItem("theme_image");
+    return storedImage || "pattern2";
   });
 
   const toggleTheme = () => {
@@ -28,7 +28,7 @@ export const ThemeProvider = ({ children }) => {
   }, [theme]);
 
   useEffect(() => {
-    localStorage.setItem("theme-image", themeImage);
+    localStorage.setItem("theme_image", themeImage);
   }, [themeImage]);
 
   return (

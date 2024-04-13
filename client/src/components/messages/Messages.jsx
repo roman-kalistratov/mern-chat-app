@@ -33,7 +33,7 @@ const Messages = () => {
 
   return (
     <div
-      className={`p-4 flex-1 overflow-auto h-full w-full bg-iconHover dark:bg-dark2 bg-${themeImage} bg-opacity-20`}
+      className={`p-4 flex-1 overflow-auto overflow-x-hidden h-full w-full bg-iconHover dark:bg-dark2 bg-${themeImage}`}
     >
       {!loading &&
         messages?.length > 0 &&

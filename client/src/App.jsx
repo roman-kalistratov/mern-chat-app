@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Login from "./pages/login/Login";
-import SignUp from "./pages/signup/SignUp";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/AuthContext";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="h-screen w-screen flex items-center justify-center bg-[#fff] dark:bg-bgMainDark">
+      <div className="h-screen w-screen flex items-center justify-center bg-white">
         <Routes>
           <Route
             path="/"

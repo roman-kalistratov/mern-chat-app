@@ -59,7 +59,7 @@ const Message = ({ message }) => {
       </div>
 
       <div
-        className={`chat-bubble flex flex-col gap-2 items-center justify-center max-w-[48%] text-left text-light2 dark:text-dark ${bubbleBgColor} ${shakeClass} rounded-md`}
+        className={`chat-bubble break-all  text-left text-wrap text-light2 dark:text-dark ${bubbleBgColor} ${shakeClass} rounded-md`}
       >
         {message?.file && (
           <>
@@ -72,7 +72,7 @@ const Message = ({ message }) => {
                 <img
                   src={`${serverURI}/uploads/${message.file.fileName}`}
                   alt="upload-img"
-                  className="max-w-[250px] rounded-md"
+                  className="max-w-[220px] rounded-md"
                 />
               </div>
             ) : (
@@ -94,10 +94,14 @@ const Message = ({ message }) => {
             )}
           </>
         )}
-        <div>{message.message}</div>
+
+        {message.message}
       </div>
-      <div className="chat-footer opacity-70 flex gap-2 items-center text-light2 dark:text-dark2">
-        {formattedTime}
+      <div className="chat-footer opacity-50">
+        <time className="text-light dark:text-dark text-xs opacity-50">
+          {" "}
+          {formattedTime}
+        </time>
       </div>
     </div>
   );

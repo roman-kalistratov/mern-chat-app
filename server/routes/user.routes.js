@@ -4,6 +4,7 @@ import fileMiddleware from "../middleware/multer.middleware.js";
 
 import {
   createContact,
+  removeContact,
   blockUser,
   unBlockUser,
   getUsers,
@@ -16,10 +17,11 @@ const router = express.Router();
 
 router.post("/", protectRoute, createContact);
 router.post("/blockuser/:contactId", protectRoute, blockUser);
-router.delete("/unblockuser/:contactId", protectRoute, unBlockUser);
 router.get("/", protectRoute, getContacts);
 router.get("/all", protectRoute, getUsers);
+router.delete("/unblockuser/:contactId", protectRoute, unBlockUser);
 router.delete("/:contactId", protectRoute, deleteUser);
+router.delete("/removeContact/:contactId", protectRoute, removeContact);
 router.post(
   "/update",
   protectRoute,

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import serverURI from "../../config";
 import {
   sortUsersByName,
   groupUsersByFirstLetter,
@@ -8,7 +9,6 @@ import useUserInfo from "../../zustand/useUserInfo";
 import Divider from "../Divider";
 import avatar from "../../assets/images/avatar.png";
 import useGetUsers from "../../hooks/useGetUsers";
-import serverURI from "../../config";
 
 const Users = () => {
   const { data: users, isLoading } = useGetUsers();
@@ -58,7 +58,7 @@ const Users = () => {
                   className={`flex items-center justify-start gap-2 p-3 px-6 hover:bg-bgHover hover:text-dark cursor-pointer ${
                     isUserInfo &&
                     userInfo._id === user._id &&
-                    "bg-bgActive text-dark dark:bg-dark2"
+                    "bg-bgActive text-dark "
                   }`}
                   onClick={() => handleClick(user)}
                 >

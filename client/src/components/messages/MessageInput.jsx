@@ -90,8 +90,8 @@ const MessageInput = () => {
   return (
     <>
       {file && (
-        <div className="flex items-center justify-between p-1.5 w-[99.888%] text-xs bg-light border border-green  dark:bg-iconHoverDark dark:text-dark2">
-          <div className="">
+        <div className="flex py-2 items-center justify-between p-1.5 w-[99.888%] text-xs bg-light border border-green  dark:bg-iconHoverDark dark:text-dark2">
+          <div>
             <p>You have selected</p>
             <a
               href={previewSrc}
@@ -114,7 +114,7 @@ const MessageInput = () => {
       )}
 
       <form
-        className="flex items-center justify-center py-4 px-4  gap-2 relative bg-light dark:bg-dark2"
+        className="flex items-center justify-center py-4 px-4 gap-2 relative bg-light dark:bg-dark2"
         onSubmit={handleSubmit}
       >
         <div className="p-2 rounded-md cursor-pointer text-iconLight hover:bg-iconHover bg-icon dark:text-dark dark:hover:bg-iconHoverDark dark:bg-iconDark">
@@ -156,7 +156,7 @@ const MessageInput = () => {
         <div className="w-full flex items-center justify-start gap-3">
           <input
             type="text"
-            className="outline-none text-sm text-light dark:text-dark placeholder:text-light2 dark:placeholder:text-dark2 rounded-md w-full p-2.5 px-3  dark:bg-inputDark pr-9"
+            className="outline-none text-sm text-light dark:text-dark placeholder:text-light2 dark:placeholder:text-dark2 rounded-md w-full p-2.5 px-3  dark:bg-inputDark md:pr-9"
             placeholder="Enter message..."
             value={message}
             onChange={(e) => handleSetMessage(e)}

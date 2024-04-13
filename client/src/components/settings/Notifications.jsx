@@ -17,7 +17,6 @@ const Notifications = () => {
     new URL(notificationSound4, import.meta.url).href,
   ];
 
-  console.log(notifications.tonePath);
   const handleTonesChange = () => {
     update({ ...notifications, tones: !notifications.tones });
   };
@@ -30,8 +29,8 @@ const Notifications = () => {
 
   return (
     <div className="px-5 flex flex-col items-start justify-start gap-3">
-      <div className="form-control">
-        <label className="label cursor-pointer py-2 px-0">
+      <div className="form-control w-full">
+        <label className="label cursor-pointer py-2 px-0 ">
           <span className="label-text text-light dark:text-dark">
             Conversation tones
           </span>

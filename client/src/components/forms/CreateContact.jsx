@@ -18,7 +18,6 @@ const CreateContact = () => {
       nickname: "",
     },
     onSubmit: async (values) => {
-      console.log(values);
       await createUser(values);
       createUserForm.resetForm();
     },

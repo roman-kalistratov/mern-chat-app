@@ -8,10 +8,15 @@ import DropDown from "../DropDown";
 import avatar from "../../assets/images/avatar.png";
 import useDeleteUser from "../../hooks/useDeleteUser";
 
-const UserInfoHeader = ({ userInfo, setIsUserInfo }) => {
+const UserInfoHeader = ({ userInfo, setIsUserInfo, setUserInfo }) => {
   const { onlineUsers } = useSocketContext();
   const { deleteUser } = useDeleteUser();
   const isOnline = onlineUsers.includes(userInfo._id);
+
+  const handleClose = () => {
+    setIsUserInfo();
+    setUserInfo(null);
+  };
 
   return (
     <figure className="relative w-full transition-all duration-300 ">
@@ -21,11 +26,11 @@ const UserInfoHeader = ({ userInfo, setIsUserInfo }) => {
             ? serverURI + "/uploads/" + userInfo.profilePic
             : avatar
         }`}
-        className="w-full object-cover h-[270px]"
+        className="w-full object-cover lg:h-[270px]"
         alt="user pic"
       />
       <figcaption className="absolute w-full flex items-start justify-between top-4 z-10 px-4 text-xl text-white bottom-6">
-        <IoClose className=" cursor-pointer" onClick={() => setIsUserInfo()} />
+        <IoClose className=" cursor-pointer" onClick={() => handleClose()} />
         <DropDown icon={BsThreeDotsVertical}>
           <div
             className="w-full flex items-center justify-between text-sm  text-colorRed hover:text-hoverColorRed "
@@ -47,7 +52,7 @@ const UserInfoHeader = ({ userInfo, setIsUserInfo }) => {
           {isOnline ? "Online" : "Offline"}
         </h4>
       </figcaption>
-      <div className="absolute top-0 left-0 w-full h-full inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-60"></div>
+      <div className="absolute top-0 left-0 w-full h-full inset-0 bg-gradient-to-b  bg-opacity-15 from-black via-transparent to-black opacity-60 "></div>
     </figure>
   );
 };

@@ -16,7 +16,7 @@ import useBlockUser from "../../hooks/useBlockUser";
 import useDeleteUser from "../../hooks/useDeleteUser";
 
 const UserInfo = () => {
-  const { userInfo, setIsUserInfo } = useUserInfo();
+  const { userInfo, setIsUserInfo, setUserInfo } = useUserInfo();
   const { setSelectedConversation } = useConversation();
   const { isLoading, addToFavourites, removeFavourite } = useFavourite();
   const { data: favourites } = useGetFavorites();
@@ -35,13 +35,30 @@ const UserInfo = () => {
     } else await addToFavourites(userInfo._id);
   };
 
+  const handleMessage = () => {
+    setSelectedConversation(userInfo);
+    setIsUserInfo();
+
+    // for mobile
+    const messageContainer = document.getElementById("messageContainer");
+
+    if (window.innerWidth <= 1024) {
+      messageContainer.classList.remove("hidden");
+      messageContainer.classList.add("flex");
+    }
+  };
+
   return (
-    <div className="w-full max-w-[340px] h-full flex flex-col border-l border-light p-5 dark:border-dark  dark:bg-dark3">
-      <UserInfoHeader userInfo={userInfo} setIsUserInfo={setIsUserInfo} />
+    <div className="absolute z-20 xl:relative w-full lg:min-w-[300px] sm:right-0 sm:max-w-[280px] h-full flex flex-col border-l bg-white border-light p-5 dark:border-dark  dark:bg-dark3 overflow-auto">
+      <UserInfoHeader
+        userInfo={userInfo}
+        setIsUserInfo={setIsUserInfo}
+        setUserInfo={setUserInfo}
+      />
       <div className="flex items-center justify-between">
         <div
           className="flex flex-col items-center justify-center pt-4 gap-2 cursor-pointer"
-          onClick={() => setSelectedConversation(userInfo)}
+          onClick={() => handleMessage()}
         >
           <span className="p-2 bg-icon dark:bg-iconDark rounded-sm">
             <BiMessageAltDetail className=" text-iconLight dark:text-iconDark text-lg" />

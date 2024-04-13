@@ -20,8 +20,14 @@ const useUpdateUser = () => {
           },
         })
         .then((response) => {
-          localStorage.setItem("chat-user", JSON.stringify(response.data));
-          setAuthUser(response.data);
+          const user = response.data;
+
+          if (user.error) {
+            toast.error(user.error);
+          } else {
+            localStorage.setItem("chat-user", JSON.stringify(user));
+            setAuthUser(user);
+          }
         });
     } catch (error) {
       toast.error(error.message);

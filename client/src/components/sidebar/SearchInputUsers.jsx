@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import toast from "react-hot-toast";
 import useGetUsers from "../../hooks/useGetUsers";

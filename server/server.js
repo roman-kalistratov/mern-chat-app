@@ -26,11 +26,6 @@ app.use("/api/users", userRoutes);
 app.use("/api/favourite", favouriteRoutes);
 
 app.use(express.static(path.join(__dirname, "/client/dist")));
-// app.use(express.static(path.join(__dirname, "/uploads")));
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-// });
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {

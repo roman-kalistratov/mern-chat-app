@@ -38,6 +38,10 @@ const Profile = () => {
       location: authUser?.location || "",
     },
     onSubmit: async (values) => {
+      if (!authUser.isUpdate) {
+        toast.error("You can only update users created by you.");
+        return;
+      }
       const data = new FormData();
 
       if (profileImage) {
@@ -87,7 +91,9 @@ const Profile = () => {
           background: `url(${bg_profile}) no-repeat center/cover`,
         }}
       >
-        <h4 className="text-dark font-semibold p-4">Profile</h4>
+        <h4 className="text-lg text-dark capitalize font-semibold p-4">
+          Profile
+        </h4>
       </div>
 
       <div className="flex flex-col items-center -mt-14 gap-2 pb-8">

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { FaRegUser } from "react-icons/fa";
+import React from "react";
 import { MdEdit, MdOutlineCheck } from "react-icons/md";
 
 const ProfileField = ({

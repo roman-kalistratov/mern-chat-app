@@ -1,6 +1,7 @@
 import UserModel from "../models/user.model.js";
 import ConversationModel from "../models/conversation.model.js";
 import MessageModel from "../models/message.model.js";
+import FavoriteModel from "../models/favorite.model.js";
 
 export const getUsers = async (req, res) => {
   try {
@@ -56,11 +57,9 @@ export const createContact = async (req, res) => {
     // check if contact already exists
     const user = await UserModel.findById(userId);
     if (user.contacts.includes(contact._id)) {
-      return res
-        .status(400)
-        .json({
-          error: "Contact with this nickname already in your contact list.",
-        });
+      return res.status(400).json({
+        error: "Contact with this nickname already in your contact list.",
+      });
     }
 
     await UserModel.findByIdAndUpdate(userId, {
@@ -74,6 +73,35 @@ export const createContact = async (req, res) => {
   }
 };
 
+export const removeContact = async (req, res) => {
+  const userId = req.user._id;
+  const { contactId } = req.params;
+
+  try {
+    const user = await UserModel.findOne({ _id: userId }).select("-password");
+
+    if (!user) {
+      return res.status(400).json({ error: "Unauthorized." });
+    }
+
+    if (!user.contacts.includes(contactId)) {
+      const favourite = await FavoriteModel.findOne({ userId });
+      const favouriteContactIndex = favourite.favouriteUsers.indexOf(contactId);
+      favourite.favouriteUsers.splice(favouriteContactIndex, 1);
+      await favourite.save();
+    } else {
+      const contactIndex = user.contacts.indexOf(contactId);
+      user.contacts.splice(contactIndex, 1);
+      await user.save();
+    }
+
+    return res.status(200).json({ message: "Chat removed successfully", user });
+  } catch (error) {
+    console.error("Error in deleteUser: ", error.message);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
 export const deleteUser = async (req, res) => {
   const userId = req.user._id;
   const { contactId } = req.params;
@@ -83,6 +111,12 @@ export const deleteUser = async (req, res) => {
 
     if (!user) {
       return res.status(400).json({ error: "unauthorized." });
+    }
+
+    if (!user.isDelete) {
+      return res
+        .status(200)
+        .json({ error: "You can only delete users created by you." });
     }
 
     const conversations = await ConversationModel.find({
@@ -118,6 +152,12 @@ export const updateUser = async (req, res) => {
 
   try {
     const user = await UserModel.findOne({ _id: userId }).select("-password");
+
+    if (!user.isUpdate) {
+      return res
+        .status(200)
+        .json({ error: "You can only update users created by you." });
+    }
 
     user.nickname = nickname;
     user.status = status;
@@ -180,9 +220,9 @@ export const unBlockUser = async (req, res) => {
       return res.status(400).json({ message: "Contact is not blocked." });
     }
 
-    const userIndex = user.blockedUsers.indexOf(contactId);
+    const contactIndex = user.blockedUsers.indexOf(contactId);
 
-    user.blockedUsers.splice(userIndex, 1);
+    user.blockedUsers.splice(contactIndex, 1);
 
     await user.save();
 
