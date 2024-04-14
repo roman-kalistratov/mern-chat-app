@@ -14,7 +14,7 @@
 ## Configuration
 - Add a `.env` file to the root directory.
 
-### Setup .env file
+### Setup `.env` file
 
 ```js
 PORT=5000
