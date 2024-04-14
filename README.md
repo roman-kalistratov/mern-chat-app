@@ -17,9 +17,9 @@
 ### Setup .env file
 
 ```js
-PORT=...
-MONGODB_URI=...
-JWT_SECRET=...
+PORT=5000
+MONGODB_URI="Your mongo connetion"
+JWT_SECRET=RrayU1WKg3M0g0rjMuJjxmyDEIkpM5Y9DG1ksnDhNHs
 NODE_ENV=development
 ```
 
