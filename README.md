@@ -1,37 +1,63 @@
-# MERN Stack Project: Build and Deploy a Real Time Chat App | JWT, Socket.io
+## The project features include:
 
-![Demo App](https://i.ibb.co/gFSMzKN/1.png)
+- Tech stack: MERN + Socket.io + TailwindCSS + Daisy UI
+- User authentication and authorization using JWT tokens.
+- Real-time chat based on Socket.IO.
+- Profile and chat settings customization.
+- Online user status (Socket.io and React Context)
+- Search, addition, deletion, and blocking of contacts.
+- Real-time file and image sharing.
+- Chat theme customization.
+- Typing indicator tracking for conversation partners.
+- Global state management with Zustand
 
-[Video Tutorial on Youtube](https://youtu.be/HwCqsOis894)
+## Configuration
 
-Some Features:
-
--   🌟 Tech stack: MERN + Socket.io + TailwindCSS + Daisy UI
--   🎃 Authentication && Authorization with JWT
--   👾 Real-time messaging with Socket.io
--   🚀 Online user status (Socket.io and React Context)
--   👌 Global state management with Zustand
--   🐞 Error handling both on the server and on the client
--   ⭐ At the end Deployment like a pro for FREE!
--   ⏳ And much more!
+- Add a `.env` file to the root directory.
 
 ### Setup .env file
 
 ```js
 PORT=...
-MONGO_DB_URI=...
+MONGODB_URI=...
 JWT_SECRET=...
-NODE_ENV=...
+NODE_ENV=development
 ```
 
-### Build the app
+### Build and start the app
+
+server
 
 ```shell
-npm run build
-```
-
-### Start the app
-
-```shell
+npm install
 npm start
 ```
+
+client:
+
+```shell
+cd client
+npm install
+npm start
+```
+
+# Resource
+
+[Create React App](https://create-react-app.dev/)<br>
+[Tailwindcss](https://tailwindcss.com/)<br>
+[Daisy UI](https://daisyui.com/)<br>
+[React Hot Toast](https://github.com/timolins/react-hot-toast#readme)<br>
+[Mongoose](https://mongoosejs.com/)<br>
+[ExpressJS](https://expressjs.com/)<br>
+[Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)<br>
+[Formik](https://formik.org/)<br>
+[Axios](https://axios-http.com/)<br>
+[Socket.io](https://socket.io/)<br>
+
+# Preview
+
+![mern-chat-app-s9eg onrender com_ (1)](https://github.com/roman-kalistratov/mern-chat-app/assets/80212286/87b85038-0d2a-4db1-8c92-79ec6455422e)
+![mern-chat-app-s9eg onrender com_](https://github.com/roman-kalistratov/mern-chat-app/assets/80212286/f977d0a0-08c6-4c7a-9931-3b7fb3b85dab)
+![mern-chat-app-s9eg onrender com_ (2)](https://github.com/roman-kalistratov/mern-chat-app/assets/80212286/1dc74ef9-26a8-4c93-aaad-01e6affcaae7)
+![mern-chat-app-s9eg onrender com_(Samsung Galaxy S8+) (1)](https://github.com/roman-kalistratov/mern-chat-app/assets/80212286/ae26d5e7-7088-4b5a-a973-ed4ebdab8979)
+![mern-chat-app-s9eg onrender com_(Samsung Galaxy S8+)](https://github.com/roman-kalistratov/mern-chat-app/assets/80212286/d50d0f14-954f-47af-8f09-5349b4a8fdcb)

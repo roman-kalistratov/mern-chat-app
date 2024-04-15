@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed z-10 border-t w-full lg:static lg:border-t-0 lg:w-[75px] lg:max-w-[75px] py-2 lg:py-0 lg:h-screen flex lg:flex-col items-center justify-between bg-dark2
+      className="bottom-[50px] z-10 border-t w-full lg:static lg:border-t-0 lg:w-[75px] lg:max-w-[75px] py-2 lg:py-0 lg:h-screen flex lg:flex-col items-center justify-between bg-dark2
        lg:border-r border-dark "
     >
       <div
