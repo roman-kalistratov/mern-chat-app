@@ -23,6 +23,10 @@ JWT_SECRET=RrayU1WKg3M0g0rjMuJjxmyDEIkpM5Y9DG1ksnDhNHs
 NODE_ENV=development
 ```
 
+### Setup `config.js` file
+client/src/config.js
+change serverURI to http://localhost:5000
+
 ### Build and start the app
 server
 ```shell
