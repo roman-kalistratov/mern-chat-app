@@ -26,7 +26,7 @@ const UserInfoHeader = ({ userInfo, setIsUserInfo, setUserInfo }) => {
             ? serverURI + "/uploads/" + userInfo.profilePic
             : avatar
         }`}
-        className="w-full object-cover lg:h-[270px]"
+        className="w-full object-cover min-h-[270px] h-[270px]"
         alt="user pic"
       />
       <figcaption className="absolute w-full flex items-start justify-between top-4 z-10 px-4 text-xl text-white bottom-6">
