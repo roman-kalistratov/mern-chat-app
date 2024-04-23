@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="border-t w-full lg:static lg:border-t-0 lg:w-[75px] lg:max-w-[75px] py-2 lg:py-0 lg:h-screen flex lg:flex-col items-center justify-between bg-dark2
+      className="border-t w-full lg:border-t-0 lg:w-[75px] lg:max-w-[75px] py-2 lg:py-0 lg:h-screen flex lg:flex-col items-center justify-between bg-dark2
        lg:border-r border-dark"
     >
       <div
@@ -62,26 +62,6 @@ const Navbar = () => {
           <FiLogOut size={20} />
         </div>
       </ul>
-
-      {/* <div
-        className="p-3 md:mb-4 cursor-pointer text-iconLight hover:bg-icon rounded-md tooltip tooltip-right"
-        data-tip="theme"
-        onClick={toggleTheme}
-      >
-        {theme === "dark" ? (
-          <BsFillMoonStarsFill size={20} />
-        ) : (
-          <BsSun size={22} />
-        )}
-      </div>
-
-      <div
-        className="p-3 md:mb-4 cursor-pointer text-iconLight bg-icon hover:bg-iconHover rounded-md tooltip tooltip-right"
-        data-tip="logout"
-        onClick={() => logout()}
-      >
-        <FiLogOut size={20} />
-      </div> */}
     </nav>
   );
 };

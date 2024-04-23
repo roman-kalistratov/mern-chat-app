@@ -16,7 +16,7 @@ const Chats = () => {
   );
 
   return (
-    <div className="py-4 flex flex-col">
+    <div className="py-4">
       {filteredChats?.length > 0 ? (
         <>
           <h2 className="text-light px-4 dark:text-dark text-[11px] uppercase font-semibold">

@@ -13,24 +13,22 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="h-screen w-screen flex items-center justify-center bg-white">
-        <Routes>
-          <Route
-            path="/"
-            element={authUser ? <Home /> : <Navigate to={"/login"} />}
-          />
-          <Route
-            path="/login"
-            element={authUser ? <Navigate to="/" /> : <Login />}
-          />
-          <Route
-            path="/signup"
-            element={authUser ? <Navigate to="/" /> : <SignUp />}
-          />
-        </Routes>
-        {/* <ReactQueryDevtools initialIsOpen={false}></ReactQueryDevtools> */}
-        <Toaster />
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={authUser ? <Home /> : <Navigate to={"/login"} />}
+        />
+        <Route
+          path="/login"
+          element={authUser ? <Navigate to="/" /> : <Login />}
+        />
+        <Route
+          path="/signup"
+          element={authUser ? <Navigate to="/" /> : <SignUp />}
+        />
+      </Routes>
+      {/* <ReactQueryDevtools initialIsOpen={false}></ReactQueryDevtools> */}
+      <Toaster />
     </QueryClientProvider>
   );
 }

@@ -13,7 +13,7 @@ const UserInfoHeader = ({ userInfo, setIsUserInfo, setUserInfo }) => {
   const isOnline = onlineUsers.includes(userInfo._id);
 
   const handleClose = () => {
-    setIsUserInfo();
+    setIsUserInfo(false);
     setUserInfo(null);
   };
 
@@ -26,7 +26,7 @@ const UserInfoHeader = ({ userInfo, setIsUserInfo, setUserInfo }) => {
         className="w-full object-cover min-h-[270px] h-[270px]"
         alt="user pic"
       />
-      <figcaption className="absolute w-full flex items-start justify-between top-4 z-10 px-4 text-xl text-white bottom-6">
+      <figcaption className="absolute z-50 w-full flex items-start justify-between top-4 px-4 text-xl text-white bottom-6">
         <IoClose className=" cursor-pointer" onClick={() => handleClose()} />
         <DropDown icon={BsThreeDotsVertical}>
           <div

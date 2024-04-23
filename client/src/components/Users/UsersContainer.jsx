@@ -5,7 +5,7 @@ import Users from "./Users";
 
 const UsersContainer = () => {
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div className="flex flex-col h-full">
       <SidebarHeader title="Users" icon={false} />
       <SearchInputUsers />
       <Users />

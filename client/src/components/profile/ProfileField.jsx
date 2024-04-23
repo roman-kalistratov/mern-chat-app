@@ -21,7 +21,7 @@ const ProfileField = ({
         </label>
 
         {!editing ? (
-          <span className="dark:text-dark">{value}</span>
+          <span className="dark:text-dark break-all">{value}</span>
         ) : (
           <input
             type={type}

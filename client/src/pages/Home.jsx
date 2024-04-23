@@ -22,11 +22,11 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row w-screen h-screen overflow-auto">
+    <div className="flex flex-col-reverse justify-between w-screen h-dvh lg:flex-row overflow-hidden">
       <Navbar />
-      <div className="w-full lg:min-w-[280px] lg:max-w-[280px] flex flex-col h-full mb-auto lg:h-full border-r dark:border-dark dark:bg-dark3 overflow-auto">
+      <main className="w-full lg:min-w-[280px] lg:max-w-[280px] flex flex-col lg:h-full border-r dark:border-dark dark:bg-dark3 h-full overflow-auto">
         {components[appState]}
-      </div>
+      </main>
 
       <MessageContainer />
       {isUserInfo && <UserInfo />}

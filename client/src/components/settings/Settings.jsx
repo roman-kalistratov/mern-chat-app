@@ -19,7 +19,7 @@ const Settings = () => {
   };
 
   return (
-    <>
+    <div className="h-screen">
       <SidebarHeader title="Settings" icon={false} />
       <div
         className="flex items-center justify-start gap-3 p-4 cursor-pointer  dark:bg-dark hover:dark:bg-dark2"
@@ -30,11 +30,11 @@ const Settings = () => {
             authUser?.profilePic ? "/upload/" + authUser.profilePic : avatar
           }`}
           alt="user-avatar"
-          className=" w-[80px] h-[80px] object-cover bg-light dark:bg-dark rounded-full"
+          className=" w-[80px] h-[80px] min-w-[80px] object-cover bg-light dark:bg-dark rounded-full"
         />
         <div className="dark:text-dark">
           <h2>{authUser?.nickname}</h2>
-          <h3 className="dark:text-dark2">{authUser?.status}</h3>
+          <h3 className="dark:text-dark2 break-all">{authUser?.status}</h3>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ const Settings = () => {
       >
         <Notifications />
       </Collapse>
-    </>
+    </div>
   );
 };
 

@@ -25,7 +25,7 @@ const Users = () => {
 
   // scrolling to the found user
   useEffect(() => {
-    if (isUserInfo && userInfo) {
+    if (isUserInfo && userInfo && window.innerWidth > 1024) {
       findUserRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   }, [isUserInfo, userInfo]);
@@ -42,7 +42,7 @@ const Users = () => {
   return (
     <>
       {users?.length > 0 ? (
-        <div className="flex flex-col py-2 overflow-auto">
+        <div className="flex flex-col h-full pb-6 overflow-auto ">
           {Object.entries(groupedUsers).map(([letter, crntUsers]) => (
             <div key={letter} className="  dark:text-dark text-sm">
               <h2 className="font-semibold text-green px-3">{letter}</h2>

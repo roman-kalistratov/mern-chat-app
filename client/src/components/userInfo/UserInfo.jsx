@@ -49,7 +49,7 @@ const UserInfo = () => {
   };
 
   return (
-    <div className="fixed z-20 xl:relative w-full top-0 lg:min-w-[300px] sm:right-0 sm:max-w-[280px] h-full flex flex-col border-l bg-white border-light p-5 dark:border-dark  dark:bg-dark3 overflow-auto pb-2">
+    <div className="fixed z-50 top-0 xl:relative w-full lg:min-w-[300px] sm:right-0 sm:max-w-[280px] h-full flex flex-col border-none md:border-l bg-white border-light p-5 dark:border-dark  dark:bg-dark3 overflow-auto">
       <UserInfoHeader
         userInfo={userInfo}
         setIsUserInfo={setIsUserInfo}

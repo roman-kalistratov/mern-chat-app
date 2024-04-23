@@ -102,7 +102,7 @@ const Profile = () => {
         <h4 className="text-light font-semibold dark:text-dark">
           {authUser?.nickname}
         </h4>
-        <h5 className=" text-light2 dark:text-dark2  text-sm -mt-2">
+        <h5 className=" text-light2 dark:text-dark2 text-sm -mt-2 break-all px-4 capitalize">
           {authUser?.status}
         </h5>
       </div>
