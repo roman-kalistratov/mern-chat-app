@@ -25,6 +25,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/favourite", favouriteRoutes);
 
 app.use(express.static(path.join(__dirname, "/client/dist")));
+app.use(express.static(path.join(__dirname, "/client/public")));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
