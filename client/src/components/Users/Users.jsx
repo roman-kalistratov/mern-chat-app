@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import serverURI from "../../config";
 import {
   sortUsersByName,
   groupUsersByFirstLetter,
@@ -67,7 +66,7 @@ const Users = () => {
                       <img
                         src={`${
                           user?.profilePic
-                            ? serverURI + "/uploads/" + user.profilePic
+                            ? "/upload/" + user.profilePic
                             : avatar
                         }`}
                         className="rounded-full"

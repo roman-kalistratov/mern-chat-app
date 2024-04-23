@@ -6,11 +6,13 @@ import Chats from "./Chats";
 
 const ChatsContainer = () => {
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div className="flex flex-col overflow-hidden h-full">
       <SidebarHeader title="chats" icon={true} event={<CreateContact />} />
       <SearchInputChats />
-      <Favourites />
-      <Chats />
+      <div className="h-full overflow-auto">
+        <Favourites />
+        <Chats />
+      </div>
     </div>
   );
 };

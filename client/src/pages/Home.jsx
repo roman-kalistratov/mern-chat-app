@@ -22,9 +22,9 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col-reverse lg:flex-row w-screen h-full m-auto overflow-auto relative">
+    <div className="flex flex-col-reverse lg:flex-row w-screen h-screen overflow-auto">
       <Navbar />
-      <div className="w-full lg:min-w-[280px] lg:max-w-[280px] flex flex-col h-[calc(100vh-60px)] mb-auto lg:h-full border-r dark:border-dark dark:bg-dark3 overflow-auto">
+      <div className="w-full lg:min-w-[280px] lg:max-w-[280px] flex flex-col h-full mb-auto lg:h-full border-r dark:border-dark dark:bg-dark3 overflow-auto">
         {components[appState]}
       </div>
 

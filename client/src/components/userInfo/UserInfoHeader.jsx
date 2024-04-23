@@ -1,5 +1,4 @@
 import React from "react";
-import serverURI from "../../config";
 import { useSocketContext } from "../../context/SocketContext";
 import { MdDelete } from "react-icons/md";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -19,12 +18,10 @@ const UserInfoHeader = ({ userInfo, setIsUserInfo, setUserInfo }) => {
   };
 
   return (
-    <figure className="relative w-full transition-all duration-300 ">
+    <figure className="relative w-full transition-all duration-300">
       <img
         src={`${
-          userInfo?.profilePic
-            ? serverURI + "/uploads/" + userInfo.profilePic
-            : avatar
+          userInfo?.profilePic ? "/upload/" + userInfo.profilePic : avatar
         }`}
         className="w-full object-cover min-h-[270px] h-[270px]"
         alt="user pic"

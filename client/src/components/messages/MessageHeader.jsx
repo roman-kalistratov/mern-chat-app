@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import serverURI from "../../config";
 import { BsThreeDotsVertical, BsFillInfoCircleFill } from "react-icons/bs";
 import { MdBlock, MdDelete, MdRemoveCircle } from "react-icons/md";
 import { FaArrowLeft } from "react-icons/fa";
@@ -61,7 +60,7 @@ const MessageHeader = ({ selectedConversation }) => {
           <img
             src={`${
               selectedConversation?.profilePic
-                ? serverURI + "/uploads/" + selectedConversation?.profilePic
+                ? "/upload/" + selectedConversation?.profilePic
                 : avatar
             }`}
             className="w-10 h-10 rounded-full object-cover"

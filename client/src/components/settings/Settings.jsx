@@ -8,7 +8,6 @@ import Themes from "./Themes";
 import avatar from "../../assets/images/avatar.png";
 import useAppState from "../../zustand/useAppState";
 import Notifications from "./Notifications";
-import serverURI from "../../config";
 
 const Settings = () => {
   const { authUser } = useAuthContext();
@@ -28,9 +27,7 @@ const Settings = () => {
       >
         <img
           src={`${
-            authUser?.profilePic
-              ? serverURI + "/uploads/" + authUser.profilePic
-              : avatar
+            authUser?.profilePic ? "/upload/" + authUser.profilePic : avatar
           }`}
           alt="user-avatar"
           className=" w-[80px] h-[80px] object-cover bg-light dark:bg-dark rounded-full"

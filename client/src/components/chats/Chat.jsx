@@ -1,4 +1,3 @@
-import serverURI from "../../config";
 import { useSocketContext } from "../../context/SocketContext";
 import { lastOnline } from "../../utils/lastOnline";
 import useConversation from "../../zustand/useConversation";
@@ -39,9 +38,7 @@ const Chat = ({ chat, lastIdx }) => {
           <div className="w-8 rounded-full">
             <img
               src={`${
-                chat?.profilePic
-                  ? serverURI + "/uploads/" + chat.profilePic
-                  : avatar
+                chat?.profilePic ? "/upload/" + chat.profilePic : avatar
               }`}
               alt="user avatar"
             />

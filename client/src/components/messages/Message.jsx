@@ -1,4 +1,3 @@
-import serverURI from "../../config";
 import { useAuthContext } from "../../context/AuthContext";
 import { extractTime } from "../../utils/extractTime";
 import useConversation from "../../zustand/useConversation";
@@ -17,14 +16,10 @@ const Message = ({ message }) => {
   const chatClassName = fromMe ? "chat-end" : "chat-start";
 
   const profilePic = fromMe
-    ? `${
-        authUser?.profilePic
-          ? serverURI + "/uploads/" + authUser.profilePic
-          : avatar
-      }`
+    ? `${authUser?.profilePic ? "/upload/" + authUser.profilePic : avatar}`
     : `${
         selectedConversation?.profilePic
-          ? serverURI + "/uploads/" + selectedConversation.profilePic
+          ? "/upload/" + selectedConversation.profilePic
           : avatar
       }`;
 
@@ -70,7 +65,7 @@ const Message = ({ message }) => {
                 onClick={() => handleDownload(message._id)}
               >
                 <img
-                  src={`${serverURI}/uploads/${message.file.fileName}`}
+                  src={`/upload/${message.file.fileName}`}
                   alt="upload-img"
                   className="max-w-[220px] rounded-md"
                 />

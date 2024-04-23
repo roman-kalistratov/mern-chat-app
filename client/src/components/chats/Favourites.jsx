@@ -8,7 +8,7 @@ const Favourites = () => {
   return (
     <>
       {favourites?.length > 0 && (
-        <div className="py-4 flex flex-col overflow-auto">
+        <div className="py-4 flex flex-col">
           <h2 className="text-light px-4 dark:text-dark text-[11px] uppercase font-semibold">
             Favourites
           </h2>
