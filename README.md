@@ -13,8 +13,6 @@
 
 ## Configuration
 
-- Add a `.env` file to the root directory.
-
 # server
 
 - Add a `.env` file to the root directory.
