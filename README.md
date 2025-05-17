@@ -75,5 +75,3 @@ npm start
 ![mern-chat-app-s9eg onrender com_ (2)](https://github.com/roman-kalistratov/mern-chat-app/assets/80212286/1dc74ef9-26a8-4c93-aaad-01e6affcaae7)
 ![mern-chat-app-s9eg onrender com_(Samsung Galaxy S8+) (1)](https://github.com/roman-kalistratov/mern-chat-app/assets/80212286/ae26d5e7-7088-4b5a-a973-ed4ebdab8979) 
 ![mern-chat-app-s9eg onrender com_(Samsung Galaxy S8+)](https://github.com/roman-kalistratov/mern-chat-app/assets/80212286/d50d0f14-954f-47af-8f09-5349b4a8fdcb)
-
->>>>>>> 2d126cd8bce890010537d3b90659f7e037ce04da
